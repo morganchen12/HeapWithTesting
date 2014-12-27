@@ -10,9 +10,7 @@
 #import <XCTest/XCTest.h>
 #import "NSMutableArray+HeapSort.h"
 
-#define DANIEL = 0
-
-static const NSUInteger kArrayLength = 100;
+static const NSUInteger kArrayLength = 100000;
 
 @interface HeapWithTestingTests : XCTestCase
 
@@ -28,7 +26,6 @@ static const NSUInteger kArrayLength = 100;
 }
 
 - (void)tearDown {
-    // Put teardown code here. This method is called after the invocation of each test method in the class.
     [super tearDown];
 }
 
@@ -37,21 +34,14 @@ static const NSUInteger kArrayLength = 100;
     [referenceArray sortUsingComparator:^NSComparisonResult(NSNumber *obj1, NSNumber *obj2) {
         return [obj1 compare:obj2];
     }];
-    [self.array sortWithHeapSort];
+    
+    [self measureBlock:^{
+        [self.array sortWithHeapSort];
+    }];
     
     BOOL result = [self.array isEqualToArray:referenceArray];
-#ifdef DANIEL
-    XCTAssert(result, @"HEAPSORT is ALL WRONG!!! OH NO...!!!!!");
-#else
-    XCTAssert(result, @"HeapSorted array must equal reference array");
-#endif
-}
 
-- (void)testPerformanceExample {
-    // This is an example of a performance test case.
-    [self measureBlock:^{
-        // Put the code you want to measure the time of here.
-    }];
+    XCTAssert(result, @"HEAPSORT is ALL WRONG!!! OH NO...!!!!!");
 }
 
 @end

@@ -18,6 +18,13 @@
     return array;
 }
 
+- (void)swapIndex:(NSUInteger)index1 withIndex:(NSUInteger)index2 {
+    // simple swap function
+    id objectAtIndex1 = self[index1];
+    self[index1] = self[index2];
+    self[index2] = objectAtIndex1;
+}
+
 // Implement these functions
 
 - (void)sortWithHeapSort {
@@ -25,10 +32,6 @@
 }
 
 - (void)heapify {
-    
-}
-
--(void)reheapify {
     
 }
 
