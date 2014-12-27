@@ -12,5 +12,7 @@
 
 +(instancetype)randomArrayWithLength:(NSUInteger)length;
 - (void)sortWithHeapSort;
+- (void)swapIndex:(NSUInteger)index1 withIndex:(NSUInteger)index2;
+- (void)heapify;
 
 @end
