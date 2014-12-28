@@ -77,12 +77,10 @@
             // determine largest child
             // consider 2 cases: one child exists or both exist
             // if only one child exists, it must be the left child
+            // because tree is always left-heavy
+            
             // here, we handle the single child case
-            if (!leftChildExists) {
-                largestChild = rightChild;
-                largestChildIndex = rightChildIndex;
-            }
-            else if (!rightChildExists) {
+            if (!rightChildExists) {
                 largestChild = leftChild;
                 largestChildIndex = leftChildIndex;
             }
