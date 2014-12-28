@@ -30,7 +30,7 @@
 
 - (void)sortWithHeapSort {
     
-    // use heapSort to separate heap part of array and sorted part of array
+    // use heapEnd to separate heap part of array and sorted part of array
     // sort by pulling root of max heap and swapping it to the back of array,
     // then reheapify after swap
     int heapEnd = (int)self.count-1;
