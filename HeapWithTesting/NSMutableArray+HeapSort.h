@@ -10,7 +10,8 @@
 
 @interface NSMutableArray (HeapSort)
 
-+(instancetype)randomArrayWithLength:(NSUInteger)length;
++ (instancetype)randomArrayWithLength:(NSUInteger)length;
 - (void)sortWithHeapSort;
+- (void)heapify;
 
 @end
