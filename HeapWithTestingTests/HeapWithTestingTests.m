@@ -29,6 +29,36 @@ static const NSUInteger kArrayLength = 100000;
     [super tearDown];
 }
 
+- (void)testHeapifyDidSucceed {
+    NSLog(@"testHeapifyDidSucceed assumes a max heap. If you use a min heap, you must rewrite this test.");
+    
+    // heapify
+    [self.array heapify];
+    
+    BOOL heapIsValid = YES;
+    
+    // check that max-heap status is maintained
+    for (NSInteger i = 0; i < self.array.count; i++) {
+        
+        // assign pointers
+        NSNumber *node = self.array[i];
+        NSUInteger leftChildIndex = 2*i + 1;
+        NSUInteger rightChildIndex = 2*i + 2;
+        NSNumber *leftChild;
+        NSNumber *rightChild;
+        if (leftChildIndex < self.array.count) leftChild = self.array[leftChildIndex];
+        if (rightChildIndex < self.array.count) rightChild = self.array[rightChildIndex];
+        
+        // check that max heap is maintained
+        if (leftChild && [leftChild compare:node] == NSOrderedDescending) {
+            heapIsValid = NO;
+            break;
+        }
+    }
+    
+    XCTAssert(heapIsValid, @"Heapify does not work. Send help");
+}
+
 - (void)testSortDidSucceed {
     NSMutableArray *referenceArray = [self.array mutableCopy];
     [referenceArray sortUsingComparator:^NSComparisonResult(NSNumber *obj1, NSNumber *obj2) {
