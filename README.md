@@ -10,3 +10,5 @@ In `NSMutableDictionary+HeapSort.m`, implement the `heapify` and `sortWithHeapSo
 
 
 This exercise is inspired by [Daniel](http://danielhaaser.com/) and [Benji](http://blog.benjamin-encz.de/) of [MakeSchool](https://www.makeschool.com/).
+
+The official MakeSchool fork can be found [here](https://github.com/MakeGamesWithUs/HeapWithTesting).
