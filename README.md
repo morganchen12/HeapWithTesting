@@ -14,3 +14,9 @@ In `NSMutableDictionary+HeapSort.m`, implement the `heapify` and `sortWithHeapSo
 This exercise is inspired by [Daniel](http://danielhaaser.com/) and [Benji](http://blog.benjamin-encz.de/) of [MakeSchool](https://www.makeschool.com/).
 
 The official MakeSchool fork can be found [here](https://github.com/MakeGamesWithUs/HeapWithTesting).
+
+##Solution
+
+The solution written here is done entirely iteratively and in-place. If you choose to use extra memory and/or implement your functions recursively, they may end up looking very different from the solution provided.
+
+This doesn't mean they won't be valid solutions, however.

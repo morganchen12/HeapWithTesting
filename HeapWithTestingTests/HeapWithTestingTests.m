@@ -57,7 +57,7 @@ static const NSUInteger kArrayLength = 100000;
             heapIsValid = NO;
             break;
         }
-        if (rightChild && [rightChild compare:node] == NSOrderedAscending) {
+        if (rightChild && [rightChild compare:node] == NSOrderedDescending) {
             heapIsValid = NO;
             break;
         }
